@@ -1,1 +1,62 @@
+/* CSS Reset */
+* {
+    margin: 0px;
+    padding: 0px;
+}
 
+/* Grid Name + Colour Assignments */
+.header {
+     grid-area: hd;
+     background-color: lightgrey;
+}
+
+.nav {
+    grid-area: nv;
+    background-color: rgb(251, 216, 254);
+}
+
+.main {
+    grid-area: mn;
+    background-color:rgb(251, 251, 240);
+}
+
+.footer {
+    grid-area: ft;
+    background-color: grey;
+}
+
+.card-first {
+    background-color:rgb(255, 184, 184);
+}
+
+.card-other:nth-of-type(2) {
+    background-color:rgb(195, 255, 195);
+}
+
+.card-other:nth-of-type(3) {
+    background-color:rgb(200, 200, 255);
+}
+
+/* Mobile Layout (<768 px) */
+@media(max-width: 767px) {
+    .card-master{
+        display:grid;
+        grid-template-columns: 1;
+    }
+    .page-layout{
+        display:grid;
+        grid-template-columns: 1;
+        grid-template-areas:
+        "hd"
+        "nv"
+        "mn"
+        "ft";
+    }
+}
+
+/* Desktop Layout (768+ px) */
+/*
+@media(min-width: 768px) {
+
+}
+*/

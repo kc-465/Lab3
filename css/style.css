@@ -4,24 +4,20 @@
     padding: 0px;
 }
 
-/* Grid Name + Colour Assignments */
+/* Colour Assignments */
 .header {
-     grid-area: hd;
      background-color: lightgrey;
 }
 
 .nav {
-    grid-area: nv;
     background-color: rgb(251, 216, 254);
 }
 
 .main {
-    grid-area: mn;
     background-color:rgb(251, 251, 240);
 }
 
 .footer {
-    grid-area: ft;
     background-color: grey;
 }
 
@@ -40,11 +36,12 @@
 /* Mobile Layout (<768 px) */
 @media(max-width: 767px) {
     .card-master{
-        display:grid;
+        display: grid;
         grid-template-columns: 1;
+        gap: 20px;
     }
     .page-layout{
-        display:grid;
+        display: grid;
         grid-template-columns: 1;
         grid-template-areas:
         "hd"
@@ -52,11 +49,57 @@
         "mn"
         "ft";
     }
+
+    .header {
+        grid-area: hd;
+    }
+
+    .nav{
+        grid-area: nv;
+    }
+
+    .main{
+        grid-area: mn;
+    }
+
+    .footer{
+        grid-area: ft;
+    }
 }
 
 /* Desktop Layout (768+ px) */
-/*
 @media(min-width: 768px) {
+    .card-master {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+    .card-first {
+        grid-column: 1/-1;
+    }
+
+    .page-layout{
+        display: grid;
+        grid-template-columns: 220px 1fr ;
+        grid-template-areas:
+        "hd hd"
+        "nv mn"
+        "ft ft";
+    }
+
+    .header {
+        grid-area: hd;
+    }
+
+    .nav{
+        grid-area: nv;
+    }
+
+    .main{
+        grid-area: mn;
+    }
+
+    .footer{
+        grid-area: ft;
+    }
+    
 }
-*/

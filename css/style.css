@@ -4,77 +4,71 @@
     padding: 0px;
 }
 
-/* Colour Assignments */
+/* Colour + Grid Assignments */
 .header {
      background-color: lightgrey;
+     grid-area: hd;
 }
 
 .nav {
-    background-color: rgb(251, 216, 254);
+    background-color: rgb(255, 200, 255);
+    grid-area: nv;
 }
 
 .main {
-    background-color:rgb(251, 251, 240);
+    background-color:rgb(255, 255, 200);
+    grid-area: mn;
 }
 
 .footer {
     background-color: grey;
+    grid-area: ft;
 }
 
 .card-first {
-    background-color:rgb(255, 184, 184);
+    background-color:rgb(255, 200, 200);
+    grid-area: ca;
 }
 
 .card-other:nth-of-type(2) {
-    background-color:rgb(195, 255, 195);
+    background-color:rgb(200, 255, 200);
+    grid-area: cb;
 }
 
 .card-other:nth-of-type(3) {
     background-color:rgb(200, 200, 255);
+    grid-area: cc;
 }
 
 /* Mobile Layout (<768 px) */
 @media(max-width: 767px) {
-    .card-master{
-        display: grid;
-        grid-template-columns: 1;
-        gap: 20px;
-    }
     .page-layout{
         display: grid;
         grid-template-columns: 1;
+        gap: 20px;
         grid-template-areas:
         "hd"
         "nv"
         "mn"
         "ft";
     }
-
-    .header {
-        grid-area: hd;
-    }
-
-    .nav{
-        grid-area: nv;
-    }
-
-    .main{
-        grid-area: mn;
-    }
-
-    .footer{
-        grid-area: ft;
-    }
 }
 
 /* Desktop Layout (768+ px) */
 @media(min-width: 768px) {
-    .card-master {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .card-first {
         grid-column: 1/-1;
+    }
+
+    .card-other {
+        grid-column: repeat(2, 1fr);
+    }
+
+    .card-master {
+        display: grid;
+        grid-template-areas:
+        "ca ca"
+        "cb cc";
     }
 
     .page-layout{
@@ -85,21 +79,4 @@
         "nv mn"
         "ft ft";
     }
-
-    .header {
-        grid-area: hd;
-    }
-
-    .nav{
-        grid-area: nv;
-    }
-
-    .main{
-        grid-area: mn;
-    }
-
-    .footer{
-        grid-area: ft;
-    }
-    
 }
